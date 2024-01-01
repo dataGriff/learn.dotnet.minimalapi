@@ -6,4 +6,9 @@
 dotnet new web -o MagicVilla_CouponAPI
 cd MagicVilla_CouponAPI
 code -r ../MagicVilla_CouponAPI
-```
+````
+
+```bash
+dotnet add package Swashbuckle.AspNetCore
+dotnet add package Microsoft.AspNetCore.OpenApi
+``````

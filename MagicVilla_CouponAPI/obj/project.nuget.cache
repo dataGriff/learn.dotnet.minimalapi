@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Ig9/z9mWUrAeF8Ipm8jTfl9SP7g0ftaw0hF3RToB+/ZWqT8Syu1lnvsoA7RdGklT23bNsSBVQcSDVcL6tO79pQ==",
+  "dgSpecHash": "fzZ96Wy2Vok5sNkoqoyLlMEvOoBIg8/iPbU+g+ntuOLyMiO7iZGoZ1o2SMTBobYcEGdjNFbNBUY8fj9ardaiFQ==",
   "success": true,
   "projectFilePath": "/workspaces/learn.dotnet.minimalapi/MagicVilla_CouponAPI/MagicVilla_CouponAPI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/vscode/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
+    "/home/vscode/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/vscode/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/vscode/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/home/vscode/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/home/vscode/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/home/vscode/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
