@@ -12,3 +12,7 @@ code -r ../MagicVilla_CouponAPI
 dotnet add package Swashbuckle.AspNetCore
 dotnet add package Microsoft.AspNetCore.OpenApi
 ``````
+
+## Remember
+
+* When call from within codespace its a local host (such as from postman) - http://localhost:5123/helloworld/1a
