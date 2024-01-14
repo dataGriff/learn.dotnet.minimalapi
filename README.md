@@ -22,6 +22,7 @@ dotnet nuget list source
 ## Notes
 
 * should we set nullable to be disabled in the csproj?
+* useful nuget extension - aliasadidev.nugetpackagemanager
 
 ## Dependency Injection
 
@@ -92,6 +93,8 @@ In summary, Dependency Injection is about removing the hard-coded dependencies a
 
 ## DTO (Data Transfer Object)
 
+**Used automapper package to map between DTO and Entity**
+
 DTO stands for Data Transfer Object. It's a design pattern used to transfer data between software application subsystems or layers. DTOs are often used in the context of networking communication, serialization, and the transferring of data between different parts of a software application, such as from the service layer to the presentation layer.
 
 ### Key Characteristics of DTOs:
@@ -153,5 +156,7 @@ code -r ../MagicVilla_CouponAPI
 ```bash
 dotnet add package Swashbuckle.AspNetCore
 dotnet add package Microsoft.AspNetCore.OpenApi
-``````
+dotnet add package Automapper
+dotnet add package Automapper.Extensions.Microsoft.DependencyInjection
+```
 

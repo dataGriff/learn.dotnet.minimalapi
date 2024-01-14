@@ -1,10 +1,12 @@
 //using Microsoft.AspNetCore.OpenApi;
 // using Microsoft.AspNetCore.Builder;
 
+using MagicVilla_CouponAPI;
 using MagicVilla_CouponAPI.Data;
 using MagicVilla_CouponAPI.Models;
 using MagicVilla_CouponAPI.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
@@ -13,6 +15,7 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 
 var app = builder.Build();
 
@@ -31,7 +34,7 @@ app.MapGet("/api/coupons/{id:int}", (int id) => {
     return Results.Ok(CouponStore.couponList.FirstOrDefault(c => c.Id == id));
 }).WithName("GetCoupon").Produces<Coupon>(200); //note this name is then used in CreatedAtRoute in POST
 
-app.MapPost("/api/coupons", ([FromBody] CouponCreatedDTO coupon_C_DTO) => { //note DTO object usage so only transfer certain data
+app.MapPost("/api/coupons", (IMapper _mapper, [FromBody] CouponCreatedDTO coupon_C_DTO) => { //note DTO object usage so only transfer certain data & use of automapper
     if (string.IsNullOrEmpty(coupon_C_DTO.Name))
     {
         return Results.BadRequest("Invalid Id or Coupon Name");
@@ -41,23 +44,10 @@ app.MapPost("/api/coupons", ([FromBody] CouponCreatedDTO coupon_C_DTO) => { //no
         return Results.BadRequest("Coupon Name already exists");
     }
 
-    Coupon coupon = new Coupon
-    {
-        Name = coupon_C_DTO.Name,
-        IsActive = coupon_C_DTO.IsActive,
-        Percent = coupon_C_DTO.Percent
-    };
-
+    Coupon coupon = _mapper.Map<Coupon>(coupon_C_DTO);
     coupon.Id = CouponStore.couponList.Max(c => c.Id) + 1;
     CouponStore.couponList.Add(coupon);
-    CouponDTO couponDTO = new CouponDTO
-    {
-        Id = coupon.Id,
-        Name = coupon.Name,
-        IsActive = coupon.IsActive,
-        Percent = coupon.Percent,
-        Created = coupon.Created
-    };
+    CouponDTO couponDTO = _mapper.Map<CouponDTO>(coupon);
     return Results.CreatedAtRoute("GetCoupon", new { id = coupon.Id }, coupon); // note the name of the GET route is used here
 }).WithName("CreateCoupon").Accepts<CouponCreatedDTO>("application/json").Produces<CouponDTO>(201).Produces(400); // note difference types of response codes
 
