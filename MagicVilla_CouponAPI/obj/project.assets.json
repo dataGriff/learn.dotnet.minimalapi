@@ -481,6 +481,7 @@
       "outputPath": "/workspaces/learn.dotnet.minimalapi/MagicVilla_CouponAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+        "/workspaces/learn.dotnet.minimalapi/MagicVilla_CouponAPI/nuget.config",
         "/home/vscode/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [

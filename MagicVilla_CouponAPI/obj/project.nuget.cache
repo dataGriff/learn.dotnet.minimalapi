@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fzZ96Wy2Vok5sNkoqoyLlMEvOoBIg8/iPbU+g+ntuOLyMiO7iZGoZ1o2SMTBobYcEGdjNFbNBUY8fj9ardaiFQ==",
+  "dgSpecHash": "fJ86IKq64ClZEedIIBSbkedqddtCBp/kYq89CGvXvAXh8ylzLytqJZMagjWe+5go61VJwfoeJipB72NkMCGmGQ==",
   "success": true,
   "projectFilePath": "/workspaces/learn.dotnet.minimalapi/MagicVilla_CouponAPI/MagicVilla_CouponAPI.csproj",
   "expectedPackageFiles": [
